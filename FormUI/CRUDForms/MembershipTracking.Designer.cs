@@ -44,13 +44,13 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.tbxSurname = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.tbxPrice = new System.Windows.Forms.TextBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.cmbPrice = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwCustomers)).BeginInit();
@@ -92,6 +92,7 @@
             // 
             // dgwCustomers
             // 
+            this.dgwCustomers.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgwCustomers.BackgroundColor = System.Drawing.Color.DimGray;
             this.dgwCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwCustomers.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -101,6 +102,7 @@
             this.dgwCustomers.RowTemplate.Height = 24;
             this.dgwCustomers.Size = new System.Drawing.Size(490, 546);
             this.dgwCustomers.TabIndex = 0;
+            this.dgwCustomers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwCustomers_CellClick);
             // 
             // panel2
             // 
@@ -241,22 +243,13 @@
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.tbxPrice);
+            this.panel8.Controls.Add(this.cmbPrice);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(179, 123);
             this.panel8.Name = "panel8";
             this.panel8.Padding = new System.Windows.Forms.Padding(15, 20, 15, 20);
             this.panel8.Size = new System.Drawing.Size(171, 56);
             this.panel8.TabIndex = 5;
-            // 
-            // tbxPrice
-            // 
-            this.tbxPrice.BackColor = System.Drawing.Color.Silver;
-            this.tbxPrice.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbxPrice.Location = new System.Drawing.Point(15, 20);
-            this.tbxPrice.Name = "tbxPrice";
-            this.tbxPrice.Size = new System.Drawing.Size(141, 22);
-            this.tbxPrice.TabIndex = 0;
             // 
             // panel9
             // 
@@ -322,6 +315,15 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // cmbPrice
+            // 
+            this.cmbPrice.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbPrice.FormattingEnabled = true;
+            this.cmbPrice.Location = new System.Drawing.Point(15, 20);
+            this.cmbPrice.Name = "cmbPrice";
+            this.cmbPrice.Size = new System.Drawing.Size(141, 24);
+            this.cmbPrice.TabIndex = 0;
+            // 
             // MembershipTracking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -332,6 +334,7 @@
             this.MinimumSize = new System.Drawing.Size(700, 500);
             this.Name = "MembershipTracking";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.MembershipTracking_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgwCustomers)).EndInit();
@@ -345,7 +348,6 @@
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -372,11 +374,11 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.TextBox tbxSurname;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.TextBox tbxPrice;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbPrice;
     }
 }
