@@ -59,8 +59,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CRUDForms\MembershipTracking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CRUDForms\MembershipTracking.Designer.cs">
+      <DependentUpon>MembershipTracking.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CRUDForms\MembershipTracking.resx">
+      <DependentUpon>MembershipTracking.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
